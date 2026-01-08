@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    overflow: hidden;
+    background: #111;
+    font-family: 'Titillium Web';
+}
+.triggers{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+span{
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin: 0 20px;
+    padding: 2px 4px;
+    display: inline-block;
+    transition: all 0.5s;
+}
+span[data-disabled="true"]{
+    opacity: 0.3;
+    pointer-events: none;
+}
+span:hover{    
+    color: red;
+}
