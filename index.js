@@ -359,5 +359,5 @@ instructions.style.zIndex = '1000';
 instructions.style.background = 'rgba(0,0,0,0.7)';
 instructions.style.padding = '5px 10px';
 instructions.style.borderRadius = '3px';
-instructions.innerHTML = 'Click shapes below • Drag to rotate • Scroll to zoom';
+
 document.body.appendChild(instructions);
