@@ -13,20 +13,130 @@ body{
     color: #fff;
     transform: translateX(-50%);
     z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 span{
     cursor: pointer;
-    padding: 10px 20px;
+    padding: 8px 12px;
     font-size: 14px;
-    margin: 0 20px;
-    padding: 2px 4px;
+    margin: 4px;
     display: inline-block;
     transition: all 0.5s;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.5);
+    min-width: 80px;
+    text-align: center;
 }
 span[data-disabled="true"]{
     opacity: 0.3;
     pointer-events: none;
+    background: rgba(0, 0, 0, 0.3);
 }
 span:hover{    
     color: red;
+    background: rgba(255, 0, 0, 0.2);
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .triggers {
+        bottom: 10px;
+        padding: 5px;
+    }
+    
+    span {
+        padding: 6px 8px;
+        font-size: 12px;
+        margin: 3px;
+        min-width: 60px;
+    }
+    
+    /* Control panel adjustments for mobile */
+    #control-panel {
+        top: 5px !important;
+        left: 5px !important;
+        right: 5px !important;
+        max-width: none !important;
+        font-size: 11px !important;
+        padding: 8px !important;
+    }
+    
+    #control-panel div {
+        margin-bottom: 6px !important;
+    }
+    
+    #toggle-cycle {
+        padding: 4px 8px !important;
+        font-size: 10px !important;
+    }
+    
+    #loading-status {
+        top: 5px !important;
+        right: 5px !important;
+        font-size: 10px !important;
+        padding: 4px 8px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .triggers {
+        flex-direction: column;
+        align-items: stretch;
+        bottom: 5px;
+    }
+    
+    span {
+        width: 100%;
+        margin: 2px 0;
+        min-width: auto;
+        padding: 8px;
+    }
+    
+    #control-panel {
+        display: none; /* Hide on very small screens to save space */
+    }
+    
+    #loading-status {
+        font-size: 9px !important;
+        padding: 3px 6px !important;
+    }
+}
+
+/* For landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .triggers {
+        bottom: 5px;
+        flex-direction: row;
+    }
+    
+    span {
+        padding: 4px 6px;
+        font-size: 10px;
+        min-width: 50px;
+    }
+    
+    #control-panel {
+        top: 5px !important;
+        left: 5px !important;
+        max-width: 200px !important;
+    }
+}
+
+/* Prevent text selection on mobile */
+span, button {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+span:active {
+    transform: scale(0.95);
 }
